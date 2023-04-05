@@ -6,7 +6,7 @@
 body{
     font-family: "Noto Sans", sans-serif;
     color: #323232;
-    background-color: white;
+    background-color: whitesmoke;
     -webkit-font-smoothing: subpixel-antialiased;
     text-align: center;
     overflow: auto;
@@ -95,6 +95,7 @@ p{
 
 .main {
     background-color: whitesmoke;
+    display: inline-block;
 }
 
 
