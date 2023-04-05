@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="step_1__div order_quantity">
-                            <h2>STEP 1: SELECT ORDER QUANTITY</h2>
+                            <h2 class="step__h2">STEP 1: SELECT ORDER QUANTITY</h2>
                             <div class="spacer"></div>
                             <div class="offers">
                                 <div id="product-1" class="wrapper">
@@ -461,7 +461,30 @@
                             </div>
                         </div>
                     </article>
-                    
+                    <!-- ------------ Step 4: shipping addr ---------- -->
+                    <article class="step" id="step_4_shipping">
+                        <h2 class="step__h2">STEP 4: SHIPPING ADDRESS</h2>
+                        <div class="spacer"></div>
+                        <input type="text" class="step__input" placeholder="Street Address">
+                        <input type="text" class="step__input" placeholder="Apartment or Suite (Optional)">
+                        <input type="text" class="step__input" placeholder="City">
+                        <select class="step__input" name="country_selector" id="country_selector">
+                            <option value="">Select</option>
+                        </select>
+                    </article>
+                    <!-- ----------------- step 5 -------------------- -->
+                    <article class="step" id="step_5">
+                        <h2 class="step__h2">STEP 5: BILLING ADDRESS</h2>
+                        <div class="spacer"></div>
+                        <div id="shipping_addr_div" class="wrapper wrapper--step5">
+                            <input type="checkbox" id="shipping_addr" name="shipping_addr" class="basecheckbox">
+                            <label for="check" class="wrapper__label"> Same as shipping address </label>
+                        </div>
+                        <div id="diff_addr_div" class="wrapper wrapper--step5">
+                            <input type="checkbox" id="diff_addr" name="diff_addr" class="basecheckbox">
+                            <label for="check" class="wrapper__label"> Use a different billing address </label>
+                        </div>
+                    </article>
                     
                 </div>
             </form>
