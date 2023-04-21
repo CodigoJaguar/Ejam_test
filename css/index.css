@@ -1,4 +1,5 @@
 *{
+    /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
 }
@@ -11,7 +12,7 @@ body{
     text-align: center;
     overflow: auto;
     overflow-x: hidden;
-    max-width: 100%;
+    width: 100%;
 }
 
 button {
@@ -81,84 +82,85 @@ p{
     margin-inline-end: 0px;
 }
 
-   /* --------------------------------------------------- header ----------------------------------- */
-
-.form{
-    z-index: 0;
-}
-
-@media (max-width : 800px) {
-    .form{
-        display: block;
-    }
-  }
 
 .main {
     background-color: whitesmoke;
-    display: inline-block;
 }
 
+/* --------------------------------------------------- header ----------------------------------- */
 
-.general_header{
+.header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
     background-color: white;
+}
+
+.left{
+    margin-left: 17.6px;
+}
+
+.right{
     display: flex;
-
-}
-
-.contact_us{
-    margin-left: auto;
     margin-right: 17.6px;
-    display: flex;
-    align-items: center;
+    align-content: center;
 }
 
-.contact_us .divflag {
-    margin-right: 17.6px;
+@media (max-width : 450px) {
+    .right picture{
+        display: none;
+    }
 }
 
-.contact_us .flag {
-    background-position: 0 -7896px;
-    background-position-x: 0px;
-    background-position-y: -7896px;
+@media (max-width : 750px) {
+    .right #ssl{
+        display: none;
+    }
 }
 
-.contact_us .divflag {
+
+.divflag {
     background-image: url(../img/flag_sprite.png);
     background-size: 100%;
     background-repeat: no-repeat;
     display: block;
     height: 56px;
     width: 56px;
+    margin-right: 17.6px;
+    background-position: 0 -7896px;
+    
 }
 
-.contact_us > div {
-    display: inline-block;
+.contact img{
+    width: 100%;
 }
 
 
-.div_sutera{
-    user-select: none;
-    margin-left: 17.6px;
-    flex-wrap: nowrap;
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-}
 
-@media (max-width : 1000px) {
-    .item{
-        flex-direction: column;
-    }
-  }
 
 /* --------           Gallery  ---------------------------------------------------------------------    */
 
+@media (max-width : 800px) {
+    .item{
+        flex-direction: column;
+    }
+}
+
+
+@media (min-width : 800px) {
+    .form{
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0em;
+    }
+
+}
 
 .item{
     border-color: rgb(50, 50, 50);
     border-style: dashed;
-
-    width: calc(100% - 4px - 17.6px);
     max-width: 1200px;
 
     background-color: white;
@@ -166,9 +168,9 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-around;
-   
-    
 }
+
+
 
 .item__div--gallery{
     width: 400px;
@@ -357,18 +359,7 @@ body .items_gallery{
 /* -------------------------------------------------- Form -------------------------------------------------- */
 
 
-form{
-    display: flex;
-    margin-top: 0em;
-    z-index: 0;
-}
 
-
-.form__div{
-    display: block;
-    width: 50%;
-    margin-left: 35.2px;
-}
     
 
 .products__svg{
@@ -381,11 +372,10 @@ form{
 
 
 .step{
+    width: 98%;
     background-color: white;
     border: 1px #e0e0e0 solid;
     border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
     z-index: 0;
 }
 

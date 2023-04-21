@@ -66,19 +66,16 @@ Country_Selector.addEventListener('click', (e)=>{
 });
 
 
-
-
-
-
 checkbox_paypal.addEventListener('change', (e)=>{
     e.preventDefault();
     checkbox_cc.checked = false;
     step_3.style.display = 'block';
     step_5.style.display = 'block';
     
-    if (checkbox_paypal.checked) {
-        step_4.style.display = 'block';
-    }
+    
+    step_4.style.display = 'block';
+    step_4_addr.style.display  = 'none';
+    
 });
 
 
