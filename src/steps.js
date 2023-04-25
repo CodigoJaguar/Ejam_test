@@ -16,7 +16,15 @@ const product_5 = document.getElementById('check_5');
 const products  = [product_1,product_2,product_3,product_4,product_5];
 const checkbox_shipping_addr = document.getElementById('shipping_addr');
 const checkbox_diff_addr     = document.getElementById('diff_addr');
-let Country_Selector = document.getElementById('country_selector')
+// slider
+const slider = document.querySelector("#slider");
+let sliderSection = document.querySelectorAll(".slider__section");
+let sliderSectionLast = sliderSection[sliderSection.length -1];
+const btnLeft = document.querySelector("#btn-left");
+const btnRight = document.querySelector("#btn-right");
+slider.insertAdjacentElement("afterbegin",sliderSectionLast);
+// countries
+let Country_Selector = document.getElementById('country_selector');
 
 
 step_3.style.display = 'none';
@@ -26,6 +34,7 @@ step_5.style.display = 'none';
 
 let Countries = [];
 
+//  Obtencion de paises para choose
 fetch('https://restcountries.com/v3.1/all').then(function (response) {
 	console.log('success!');
     return response.json();
@@ -65,7 +74,7 @@ Country_Selector.addEventListener('click', (e)=>{
       
 });
 
-
+// ---------------------------------------
 checkbox_paypal.addEventListener('change', (e)=>{
     e.preventDefault();
     checkbox_cc.checked = false;
@@ -111,4 +120,42 @@ checkbox_shipping_addr.addEventListener('change',(e)=>{
 
 checkbox_diff_addr.addEventListener('change',(e)=>{
     checkbox_shipping_addr.checked = false;
-})
+});
+
+
+var manualNav = function (manual) {
+    slides[manual].classList.add('active');
+    btns[manual].classList.add('active');
+}
+
+//  ---------------------------------  Slider --------------------
+
+function Next() {
+    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+    slider.style.marginLeft = "-200%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function () {
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend',sliderSectionFirst);
+        slider.style.marginLeft = "-100%";
+    }, 500)
+}
+
+function Prev() {
+    let sliderSection = document.querySelectorAll(".slider__section");
+    let sliderSectionLast = sliderSection[sliderSection.length -1];
+    slider.style.marginLeft = "0%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function () {
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('afterbegin',sliderSectionLast);
+        slider.style.marginLeft = "-100%";
+    }, 500)
+}
+
+btnRight.addEventListener('click', Next);
+
+btnLeft.addEventListener('click', Prev);
+
+//------------------------------------------------------------------
+
